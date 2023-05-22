@@ -2,7 +2,7 @@ const Databs = [
     {
         title: "Greek Salad",
         price: "19.99",
-        description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croubons.",
+        description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic.",
         imageUrl: "https://cdn.discordapp.com/attachments/983087974336036907/1100087350345879632/greek-salad-1-scaled.png",
         imageAlt: "Greek salad",
     },
