@@ -19,8 +19,9 @@ const Navbar = () => {
     <div className="container px-6 py-6 max-w-7xl mr-auto mb-0 ml-auto lg:px-8">
       <nav className="flex item-center justify-between">
         <div className="flex lg:flex-1 lg:justify-center">
-          <a href="#" className="-m-1.5 p-1.5">
-            <img className="h-8" src="https://media.discordapp.net/attachments/983087974336036907/1082398686241366147/path847.png" alt="Little Lemon" />
+          <a href="#" className="-m-1.5 p-1.5 group relative">
+            <img className="h-8 group-hover:opacity-0" src="https://media.discordapp.net/attachments/983087974336036907/1082398686241366147/path847.png" alt="Little Lemon" />
+            <img className="h-8 opacity-0 group-hover:opacity-100 absolute top-1.5 left-1.5" src="https://media.discordapp.net/attachments/983087974336036907/1082398685687709726/path849.png" alt="Little Lemon" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -29,7 +30,7 @@ const Navbar = () => {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-12 mt-1">
             {navigation.map((item) => (
               <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900 hover:text-tmyellow">
                 {item.name}
