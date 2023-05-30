@@ -6,6 +6,9 @@ import Example from "./component/example";
 import MyComponent from "./component/dialog";
 import SeparateButton from "./component/separateButton";
 import ReservationPopup from "./component/reservationPopup";
+import DatePick from "./component/element/datePicker";
+import TimePick from "./component/element/timePicker";
+import ListPick from "./component/element/listPicker";
 
 
 function App() {
@@ -14,6 +17,9 @@ function App() {
       <Navbar />
       {/* <Hero /> */}
       <ReservationPopup />
+      <DatePick />
+      <TimePick />
+      <ListPick />
       {/* <Example /> */}
       <Feature />
       {/* <SeparateButton /> */}
