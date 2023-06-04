@@ -10,7 +10,7 @@ function TimePick() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DesktopTimePicker label="Pick Time" sx={{ width: 300}} minTime={nineAM} maxTime={ninePM} />
+        <DesktopTimePicker label="Pick Time" sx={{ width: 450}} minTime={nineAM} maxTime={ninePM} />
     </LocalizationProvider>
   );
 }

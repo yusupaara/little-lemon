@@ -11,7 +11,7 @@ function DatePick() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DatePicker
         label="Pick Date"
-        sx={{ width: 300}}
+        sx={{ width: 450}}
         disablePast="true"
         minDate={tomorrow}
       />

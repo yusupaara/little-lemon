@@ -17,9 +17,9 @@ function App() {
       <Navbar />
       {/* <Hero /> */}
       <ReservationPopup />
-      <DatePick />
+      {/* <DatePick />
       <TimePick />
-      <ListPick />
+      <ListPick /> */}
       {/* <Example /> */}
       <Feature />
       {/* <SeparateButton /> */}

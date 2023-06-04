@@ -32,9 +32,9 @@ export default function ListPick() {
           onClose={handleClose}
           onOpen={handleOpen}
           value={ppl}
-          label="ppl"
+          label="Number of people"
           onChange={handleChange}
-          sx={{ width: 300}}
+          sx={{ width: 450}}
         >
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>
