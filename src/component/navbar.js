@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Dialog} from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import LoginButton from "./loginSwitch";
 
 const navigation = [
   { name: "Home", href: "#"},
@@ -39,7 +40,7 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-center">
             <a href="#" className="text-sm font-semibold leading-6 text-tmyellow hover:text-tmgrey">
-              Log in <span aria-hidden="true">&rarr;</span>
+            <LoginButton />
             </a>
         </div>
       </nav>
