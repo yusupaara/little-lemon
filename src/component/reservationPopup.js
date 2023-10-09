@@ -26,7 +26,7 @@ export default function ReservationPopup() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 hidden bg-gray-500/30 backdrop-blur-sm transition-opacity md:block" />
+            <div className="fixed inset-0 hidden grayscale backdrop-blur-sm transition-opacity md:block" />
           </Transition.Child>
 
           {/* Background Modal */}

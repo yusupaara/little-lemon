@@ -1,6 +1,6 @@
 export default function DishCard({ dishes }) {
   return (
-    <div className="flex flex-col items-center rounded-lg bg-gray-100 shadow-lg overflow-hidden pb-6">
+    <div className="flex flex-col items-center rounded-lg bg-gray-100 ring-1 ring-tmgrey ring-opacity-50 overflow-hidden pb-6">
       <img
         className="h-64 w-full sm:h-80 object-cover object-center align-middle"
         src={dishes.imageUrl}
@@ -15,9 +15,9 @@ export default function DishCard({ dishes }) {
         </div>
         <div className="flex-row space-y-9 mx-auto font-merriweather">
           <div>
-            <a href="#" className="text-tmgrey text-lg mt-4">
+            <div className="text-tmgrey text-lg mt-4">
               {dishes.description}
-            </a>
+            </div>
           </div>
           <div className="btn-secondary">Order a Delivery</div>
         </div>

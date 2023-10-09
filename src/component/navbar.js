@@ -20,10 +20,9 @@ const Navbar = () => {
     <div className="container px-6 py-6 max-w-7xl mr-auto mb-0 ml-auto lg:px-8">
       <nav className="flex item-center justify-between">
         <div className="flex lg:flex-1 lg:justify-center">
-          <a href="#" className="-m-1.5 p-1.5 group relative">
-            <img className="h-8 group-hover:opacity-0" src="https://media.discordapp.net/attachments/983087974336036907/1082398686241366147/path847.png" alt="Little Lemon" />
-            <img className="h-8 opacity-0 group-hover:opacity-100 absolute top-1.5 left-1.5" src="https://media.discordapp.net/attachments/983087974336036907/1082398685687709726/path849.png" alt="Little Lemon" />
-          </a>
+          <div className="-mb-2 p-1.5 group relative">
+            <img className="h-8" src="https://cdn.discordapp.com/attachments/983087974336036907/1159333073599615047/ezgif-5-051bc3f05e.gif?ex=6530a410&is=651e2f10&hm=c92a80f47a363aa722cca8fa07820aa95c2fd05e78bea7dcaf5ac1f934f0bb70&" alt="Little Lemon" />
+          </div>
         </div>
         <div className="flex lg:hidden">
           <button type="button" className="inline-flex items-center justify-center rounded-md -m-2.5 p-2.5 text-gray-700"
@@ -31,7 +30,7 @@ const Navbar = () => {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12 mt-1">
+        <div className="hidden lg:flex lg:gap-x-12 mt-2">
             {navigation.map((item) => (
               <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900 hover:text-tmyellow">
                 {item.name}
@@ -39,9 +38,9 @@ const Navbar = () => {
             ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-center">
-            <a href="#" className="text-sm font-semibold leading-6 text-tmyellow hover:text-tmgrey">
+            <div className="text-sm font-semibold leading-6 text-tmgrey">
             <LoginButton />
-            </a>
+            </div>
         </div>
       </nav>
       {/* Menu Wrapper */}

@@ -9,21 +9,24 @@ import ReservationPopup from "./component/reservationPopup";
 import DatePick from "./component/element/datePicker";
 import TimePick from "./component/element/timePicker";
 import ListPick from "./component/element/listPicker";
+import BookingForm from "./component/testing/BookingForm";
+import BookingPage from "./component/testing/BookingPage";
 
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <Hero /> */}
       <ReservationPopup />
+      <Feature />
+      {/* <Hero /> */}
       {/* <DatePick />
       <TimePick />
       <ListPick /> */}
       {/* <Example /> */}
-      <Feature />
       {/* <SeparateButton /> */}
       {/* <MyComponent /> */}
+      {/* <BookingPage /> */}
     </div>
   );
 }
