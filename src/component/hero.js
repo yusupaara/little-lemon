@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hero = () => {
+const Hero = ({onReserveTableClick}) => {
   return (
     <>
     <div className="bg-tmgrey px-0 py-12">
@@ -21,9 +21,9 @@ const Hero = () => {
                 We are a family owned mediterranean restaurant, focused on traditional recipes served with a modern twist
                 </a>
                 <br className="inline"></br>
-                <a className="btn-primary mt-6 text-lg">
+                <button className="btn-primary mt-6 text-lg" onClick={onReserveTableClick}>
                 Reserve a Table
-                </a>
+                </button>
               </div>
             </div>
           </div>
