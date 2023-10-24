@@ -3,17 +3,20 @@ import { useState } from "react";
 import { Dialog} from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import LoginButton from "./loginSwitch";
+import { NavLink } from "react-router-dom";
 
 const navigation = [
-  { name: "Home", href: "#"},
-  { name: "About", href: "#"},
-  { name: "Menu", href: "#"},
-  { name: "Reservations", href: "#"},
-  { name: "Order Online", href: "#"},
+  { name: "Home", href: "/"},
+  { name: "About", href: "/about"},
+  { name: "Menu", href: "/menu"},
+  { name: "Registration", href: "/register"},
+  { name: "Order Online", href: "/order"},
 ];
 
 const Navbar = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const defaultNavStyle = "text-sm font-semibold leading-6 text-gray-900 hover:text-tmyellow";
 
   return (
     <>
@@ -32,9 +35,9 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:flex lg:gap-x-12 mt-2">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900 hover:text-tmyellow">
+              <NavLink key={item.name} href={item.href} to={item.href} className={({ isActive }) => (isActive ? (defaultNavStyle, "text-tmgrey font-semibold border-b-2 border-tmgrey")  : defaultNavStyle)} >
                 {item.name}
-              </a>
+              </NavLink>
             ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-center">

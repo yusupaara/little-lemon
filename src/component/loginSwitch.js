@@ -1,8 +1,60 @@
-import { Popover, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Fragment } from 'react'
+import { Popover, Transition } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { Fragment } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginButton() {
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  // const { user } = useSelector((state) => state.auth);
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [error, setError] = useState('');
+  // const [success, setSuccess] = useState('');
+  // const [loading, setLoading] = useState(false);
+
+  // const loginHandler = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     setLoading(true);
+  //     const config = {
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //     };
+  //     const { data } = await axios.post(
+  //       '/api/auth/login',
+  //       { email, password },
+  //       config
+  //     );
+  //     dispatch({ type: 'CHANGE_USER', payload: data });
+  //     setSuccess('Login Successful');
+  //     setLoading(false);
+  //   } catch (error) {
+  //     setError(error.response.data.error);
+  //     setLoading(false);
+  //   }
+  // }
+  // const logoutHandler = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     setLoading(true);
+  //     await axios.get('/api/auth/logout');
+  //     dispatch({ type: 'RESET_USER' });
+  //     setSuccess('Logout Successful');
+  //     setLoading(false);
+  //   } catch (error) {
+  //     setError(error.response.data.error);
+  //     setLoading(false);
+  //   }
+  // }
+
   return (
     <div className="w-full max-w-sm px-4">
       <Popover className="relative">
@@ -50,9 +102,9 @@ export default function LoginButton() {
                       className="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out"
                     >
                       <span className="flex items-center justify-center">
-                        <span className="text-sm font-medium text-gray-500 hover:font-bold hover:text-tmgrey cursor-pointer">
+                        <Popover.Button className="text-sm font-medium text-gray-500 hover:font-bold hover:text-tmgrey cursor-pointer" onClick={() => navigate("/register")}>
                           Not a member? Signup Now
-                        </span>
+                        </Popover.Button>
                       </span>
                     </div>
                   </div>
