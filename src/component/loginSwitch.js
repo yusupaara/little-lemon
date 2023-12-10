@@ -1,59 +1,40 @@
 import { Popover, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function LoginButton() {
 
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
-  // const { user } = useSelector((state) => state.auth);
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [error, setError] = useState('');
-  // const [success, setSuccess] = useState('');
-  // const [loading, setLoading] = useState(false);
+  const linkTo = "http://localhost:4000"
+  const globalAuth = useSelector(state => state.auth);
 
-  // const loginHandler = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     setLoading(true);
-  //     const config = {
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //     };
-  //     const { data } = await axios.post(
-  //       '/api/auth/login',
-  //       { email, password },
-  //       config
-  //     );
-  //     dispatch({ type: 'CHANGE_USER', payload: data });
-  //     setSuccess('Login Successful');
-  //     setLoading(false);
-  //   } catch (error) {
-  //     setError(error.response.data.error);
-  //     setLoading(false);
-  //   }
-  // }
-  // const logoutHandler = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     setLoading(true);
-  //     await axios.get('/api/auth/logout');
-  //     dispatch({ type: 'RESET_USER' });
-  //     setSuccess('Logout Successful');
-  //     setLoading(false);
-  //   } catch (error) {
-  //     setError(error.response.data.error);
-  //     setLoading(false);
-  //   }
-  // }
+  const [loginForm, setLoginForm] = useState({
+    email:"",
+    password:""
+  })
+
+  const inputHandler = (field, value) => {
+    setLoginForm(last => ({
+      ...last,
+      [field]: value
+    }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // axios.get(`${linkTo}/users`, {
+    //   params: {
+    //     email: loginForm.email,
+    //     password: loginForm.password
+    //   }
+    // })
+    console.log("hallooo")
+  }
 
   return (
     <div className="w-full max-w-sm px-4">
@@ -87,13 +68,13 @@ export default function LoginButton() {
                     <div className="grid grid-cols-1 gap-1">
                       <label className="block">
                         <span>Email address</span>
-                        <input type="email" className="mt-1 block w-full rounded-md text-tmgrey placeholder-gray-200" placeholder="dummy@gmail.com" />
+                        <input type="email" className="mt-1 block w-full rounded-md text-tmgrey placeholder-gray-200" placeholder="dummy@gmail.com" onChange={(e) => inputHandler('fullname', e.target.value)} />
                       </label>
                       <label className="block">
                         <span>Password</span>
-                        <input type="password" className="mt-1 block w-full rounded-md text-tmgrey placeholder-gray-200" placeholder="dummypassword" />
+                        <input type="password" className="mt-1 block w-full rounded-md text-tmgrey placeholder-gray-200" placeholder="dummypassword" onChange={(e) => inputHandler('fullname', e.target.value)} />
                       </label>
-                      <button className="btn-secondary mt-5">Login</button>
+                      <button className="btn-secondary mt-5" >Login</button>
                     </div>
                     
                   </div>
