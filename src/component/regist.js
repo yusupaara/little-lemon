@@ -1,53 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { registUser } from "./redux/auth";
 
 const Registration = () => {
-
   const dispatch = useDispatch();
-  const [ isFormValid, setIsFormValid ] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
 
-  const [ input, setInput ] = useState({
-    fullname: '',
-    email: '',
-    confirmedEmail: '',
-    password: '',
-    confirmedPassword: ''
-  })
+  const [input, setInput] = useState({
+    username: "",
+    email: "",
+    confirmedEmail: "",
+    password: "",
+    confirmedPassword: "",
+  });
 
-  const [ error, setError ] = useState({
-    fullname: '',
-    email: '',
-    confirmedEmail: '', 
-    password: '',
-    confirmedPassword: ''
-  })
+  const [errorInput, setErrorInput] = useState({
+    username: "",
+    email: "",
+    confirmedEmail: "",
+    password: "",
+    confirmedPassword: "",
+  });
 
-  const onInputChange = e => {
+  const onInputChange = (e) => {
     let { name, value } = e.target;
-    setInput(last => ({
+    setInput((last) => ({
       ...last,
-      [name]: value
+      [name]: value,
     }));
     validateInput(e);
-  }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(registUser(input));
+    e.target.username.value = "";
+    e.target.email.value = "";
+    e.target.confirmedEmail.value = "";
+    e.target.password.value = "";
+    e.target.confirmedPassword.value = "";
+  };
 
   useEffect(() => {
-    const noError = Object.values(error).every(err => err === '');
-    const fieldFilled = Object.values(input).every(data => data !== '');
+    const noError = Object.values(errorInput).every((err) => err === "");
+    const fieldFilled = Object.values(input).every((data) => data !== "");
     setIsFormValid(noError && fieldFilled);
-  },[input, error]);
+  }, [input, errorInput]);
 
-  const validateInput = e => {
+  const validateInput = (e) => {
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/;
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     let { name, value } = e.target;
-    setError(last => {
+    setErrorInput((last) => {
       const warningSign = { ...last, [name]: "" };
 
       switch (name) {
-        case "fullname":
+        case "username":
           if (value.length < 3) {
             warningSign[name] = "Fullname must be at least 3 characters";
           }
@@ -64,7 +73,8 @@ const Registration = () => {
           break;
         case "password":
           if (!passwordRegex.test(value)) {
-            warningSign[name] = "Password minimum five characters, at least one letter and one number";
+            warningSign[name] =
+              "Password minimum five characters, at least one letter and one number";
           }
           break;
         case "confirmedPassword":
@@ -75,13 +85,12 @@ const Registration = () => {
 
         default:
           break;
-        }
+      }
 
-        return warningSign;
+      return warningSign;
     });
-  }
+  };
 
-  
   return (
     <>
       <div className="bg-tmgrey px-0 py-12 h-screen">
@@ -91,18 +100,25 @@ const Registration = () => {
           </div>
 
           <div className="grid text-white justify-center text-lg">
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-1 w-screen max-w-lg md:max-w-2xl">
+            <form
+              className="grid grid-cols-1 md:grid-cols-2 gap-1 w-screen max-w-lg md:max-w-2xl"
+              onSubmit={(e) => handleSubmit(e)}
+            >
               <label className="block col-span-1 md:col-span-2">
                 <span>Fullname</span>
                 <input
                   type="text"
-                  name="fullname"
+                  name="username"
                   className="mt-1 block w-full rounded-md text-tmgrey placeholder-gray-200"
                   placeholder="Your Fullname"
                   onChange={onInputChange}
                   onBlur={validateInput}
                 />
-                {error.fullname && <span className="text-sm text-tmyellow tracking-tight block mt-1 leading-none">{error.fullname}</span>}
+                {errorInput.fullname && (
+                  <span className="text-sm text-tmyellow tracking-tight block mt-1 leading-none">
+                    {errorInput.fullname}
+                  </span>
+                )}
               </label>
               <label className="block">
                 <span>Email</span>
@@ -114,7 +130,11 @@ const Registration = () => {
                   onChange={onInputChange}
                   onBlur={validateInput}
                 />
-                {error.email && <span className="text-sm text-tmyellow tracking-tight block mt-1 leading-none">{error.email}</span>}
+                {errorInput.email && (
+                  <span className="text-sm text-tmyellow tracking-tight block mt-1 leading-none">
+                    {errorInput.email}
+                  </span>
+                )}
               </label>
               <label className="block">
                 <span>Confirmed email</span>
@@ -126,7 +146,11 @@ const Registration = () => {
                   onChange={onInputChange}
                   onBlur={validateInput}
                 />
-                {error.confirmedEmail && <span className="text-sm text-tmyellow tracking-tight block mt-1 leading-none">{error.confirmedEmail}</span>}
+                {errorInput.confirmedEmail && (
+                  <span className="text-sm text-tmyellow tracking-tight block mt-1 leading-none">
+                    {errorInput.confirmedEmail}
+                  </span>
+                )}
               </label>
               <label className="block">
                 <span>Password</span>
@@ -138,7 +162,11 @@ const Registration = () => {
                   onChange={onInputChange}
                   onBlur={validateInput}
                 />
-                {error.password && <span className="text-sm text-tmyellow tracking-tight block mt-1 leading-none">{error.password}</span>}
+                {errorInput.password && (
+                  <span className="text-sm text-tmyellow tracking-tight block mt-1 leading-none">
+                    {errorInput.password}
+                  </span>
+                )}
               </label>
               <label className="block">
                 <span>Confirmed password</span>
@@ -150,9 +178,17 @@ const Registration = () => {
                   onChange={onInputChange}
                   onBlur={validateInput}
                 />
-                {error.confirmedPassword && <span className="text-sm text-tmyellow tracking-tight block mt-1 leading-none">{error.confirmedPassword}</span>}
+                {errorInput.confirmedPassword && (
+                  <span className="text-sm text-tmyellow tracking-tight block mt-1 leading-none">
+                    {errorInput.confirmedPassword}
+                  </span>
+                )}
               </label>
-              <button className="md:col-span-2 justify-self-center btn-primary mt-7 font-merriweather text-md disabled:opacity-50 disabled:cursor-default disabled:translate-y-0" disabled={!isFormValid}>
+              <button
+                type="submit"
+                className="md:col-span-2 justify-self-center btn-primary mt-7 font-merriweather text-md disabled:opacity-50 disabled:cursor-default disabled:translate-y-0"
+                disabled={!isFormValid}
+              >
                 Sign Up
               </button>
             </form>
