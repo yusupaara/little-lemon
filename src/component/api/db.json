@@ -23,46 +23,6 @@
       "email": "testing@gmail.com",
       "password": "testing",
       "id": 5
-    },
-    {
-      "username": "yusup almadani",
-      "email": "yyy@gmail.com",
-      "confirmedEmail": "yyy@gmail.com",
-      "password": "Lupabro1",
-      "confirmedPassword": "Lupabro1",
-      "id": 6
-    },
-    {
-      "username": "yusup almadani",
-      "email": "yyy@gmail.com",
-      "confirmedEmail": "yyy@gmail.com",
-      "password": "Lupabro1",
-      "confirmedPassword": "Lupabro1",
-      "id": 7
-    },
-    {
-      "username": "yusup almadani",
-      "email": "yyy@gmail.come",
-      "confirmedEmail": "yyy@gmail.come",
-      "password": "Lupabro1e",
-      "confirmedPassword": "Lupabro1e",
-      "id": 8
-    },
-    {
-      "username": "2222",
-      "email": "almadaniyusup@gmail.com",
-      "confirmedEmail": "almadaniyusup@gmail.com",
-      "password": "Jancuk2",
-      "confirmedPassword": "Jancuk2",
-      "id": 9
-    },
-    {
-      "username": "333",
-      "email": "2222@hh.com",
-      "confirmedEmail": "2222@hh.com",
-      "password": "Yagaktau17",
-      "confirmedPassword": "Yagaktau17",
-      "id": 10
     }
   ]
 }

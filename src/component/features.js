@@ -1,6 +1,6 @@
 import React from "react";
 import Databs from "./data/specialDish";
-import DishCard from "./card";
+import DishCard from "./elements/card";
 
 const Feature = () => {
   return (

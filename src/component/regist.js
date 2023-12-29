@@ -49,7 +49,7 @@ const Registration = () => {
 
   const validateInput = (e) => {
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/;
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     let { name, value } = e.target;
     setErrorInput((last) => {
@@ -94,15 +94,15 @@ const Registration = () => {
   return (
     <>
       <div className="bg-tmgrey px-0 py-12 h-screen">
-        <div className="container py-5 px-12 my-0 mx-auto space-y-7 max-w-7xl sm:space-y-8 md:space-y-16 lg:mt-6">
+        <div className="container flex flex-col justify-center py-5 px-12 my-0 mx-auto space-y-7 max-w-7xl sm:space-y-8 md:space-y-16 lg:mt-6 h-3/4">
           <div className="text-3xl font-bold leading-none lg:text-4xl xl:text-5xl text-tmyellow font-merriweather text-center">
             Register
           </div>
 
           <div className="grid text-white justify-center text-lg">
             <form
-              className="grid grid-cols-1 md:grid-cols-2 gap-1 w-screen max-w-lg md:max-w-2xl"
-              onSubmit={(e) => handleSubmit(e)}
+              className="grid grid-cols-1 md:grid-cols-2 gap-1 px-5 w-screen max-w-lg md:max-w-2xl"
+              onSubmit={handleSubmit}
             >
               <label className="block col-span-1 md:col-span-2">
                 <span>Fullname</span>
