@@ -6,7 +6,7 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-block px-5 cursor-pointer py-3 rounded-lg bg-tmyellow text-tmgrey hover:bg-yellow-300 hover:translate-y-0.5 focus:outline-none focus:ring focus:ring-offset-2 active:bg-yellow-500 transform transition font-semibold text-sm tracking-wider
+    @apply inline-block px-5 cursor-pointer py-3 rounded-lg bg-gradient-to-br from-tmyellow to-amber-500 to-90% text-tmgrey hover:bg-tmyellow hover:translate-y-0.5 focus:outline-none focus:ring focus:ring-offset-2 active:bg-yellow-500 transform transition ease-in-out font-semibold text-sm tracking-wider
   }
   .btn-secondary {
     @apply inline-block px-5 cursor-pointer py-3 rounded-lg bg-tmgrey text-tmyellow hover:bg-gray-500 hover:translate-y-0.5 focus:outline-none focus:ring focus:ring-offset-2 active:bg-gray-700 transform transition font-semibold text-sm tracking-wider

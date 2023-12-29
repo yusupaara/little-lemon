@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "jonas harberk",
+      "email": "jonas@gmail.com",
+      "password": "Jonas123"
+    },
+    {
+      "username": "jddddd",
+      "email": "dfd@gmail.com",
+      "password": "dfdwwwwww",
+      "id": 3
+    },
+    {
+      "username": "jddddd2",
+      "email": "dfd2@gmail.com",
+      "password": "dfdwwwwww2",
+      "id": 4
+    },
+    {
+      "username": "testing",
+      "email": "testing@gmail.com",
+      "password": "testing",
+      "id": 5
+    }
+  ]
+}

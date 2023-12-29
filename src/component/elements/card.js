@@ -1,6 +1,6 @@
 export default function DishCard({ dishes }) {
   return (
-    <div className="flex flex-col items-center rounded-lg bg-gray-100 ring-1 ring-tmgrey ring-opacity-50 overflow-hidden pb-6">
+    <div className="flex flex-col items-center rounded-lg bg-gradient-to-b from-white from-60% to-gray-200 to-90% ring-1 ring-tmgrey ring-opacity-50 overflow-hidden pb-6">
       <img
         className="h-64 w-full sm:h-80 object-cover object-center align-middle"
         src={dishes.imageUrl}

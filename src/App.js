@@ -1,33 +1,40 @@
-import React from "react";
-import Navbar from "./component/navbar";
-import Hero from "./component/hero";
-import Feature from "./component/features";
-import Example from "./component/example";
-import MyComponent from "./component/dialog";
-import SeparateButton from "./component/separateButton";
-import ReservationPopup from "./component/reservationPopup";
-import DatePick from "./component/element/datePicker";
-import TimePick from "./component/element/timePicker";
-import ListPick from "./component/element/listPicker";
-import BookingForm from "./component/testing/BookingForm";
-import BookingPage from "./component/testing/BookingPage";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import Registration from "./component/regist";
+import Layout from "./component/layout/layout";
+import Home from "./component/layout/home";
+import Maintenance from "./component/elements/maintenance";
+import { selectIsLoggedIn, autologin } from "./component/redux/auth";
 
 
 function App() {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
+  const fetchUser = () => {
+    if (localStorage.getItem("user-little-lemon")) {
+      dispatch(autologin(JSON.parse(localStorage.getItem("user-little-lemon"))));
+    }
+  }
+
+  useEffect(() => {
+    fetchUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+
   return (
-    <div className="App">
-      <Navbar />
-      <ReservationPopup />
-      <Feature />
-      {/* <Hero /> */}
-      {/* <DatePick />
-      <TimePick />
-      <ListPick /> */}
-      {/* <Example /> */}
-      {/* <SeparateButton /> */}
-      {/* <MyComponent /> */}
-      {/* <BookingPage /> */}
-    </div>
+    <>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={ isLoggedIn? <Maintenance /> : <Registration /> } />
+          <Route path="/*" element={<Maintenance />} />
+        </Routes>
+      </Layout>
+    </Router>
+    </>
   );
 }
 
