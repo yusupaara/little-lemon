@@ -20,7 +20,7 @@ const Navbar = ({openmenu}) => {
       <nav className="flex item-center justify-between px-5">
         <div className="flex lg:flex-1 lg:justify-start">
           <div className="-mb-2 p-1.5 group relative">
-            <img className="h-8 pl-5" src="https://cdn.discordapp.com/attachments/983087974336036907/1159333073599615047/ezgif-5-051bc3f05e.gif?ex=6530a410&is=651e2f10&hm=c92a80f47a363aa722cca8fa07820aa95c2fd05e78bea7dcaf5ac1f934f0bb70&" alt="Little Lemon" />
+            <img className="h-8 pl-5" src="https://imagesave-splmdny.s3.ap-southeast-2.amazonaws.com/littlelemon-logo.gif" alt="Little Lemon" />
           </div>
         </div>
         <div className="flex lg:hidden">
