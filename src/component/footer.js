@@ -41,7 +41,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 lg:grid-cols-6 gap-4 sm:px-5 text-md font-semibold leading-6 text-white">
           {/* Logo */}
           <div className="col-span-1 pt-1">
-            <img src="https://media.discordapp.net/attachments/983087974336036907/1165042926699679814/logo-white.d09eb2af6c5a2225eedf.png" alt="logo" className="h-48" />
+            <img src="https://imagesave-splmdny.s3.ap-southeast-2.amazonaws.com/littlelemon-logo-mini.webp" alt="logo" className="h-48" />
           </div>
           {/* Sitemap */}
           <div className="col-span-1">

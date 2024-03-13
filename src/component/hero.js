@@ -100,12 +100,12 @@ const Hero = ({ openmodal, isform, switchform }) => {
                 } block transition ease-in-out duration-500 `}
               >
                 <img
-                  src="https://cdn.discordapp.com/attachments/983087974336036907/1100095572486131712/4f3f77cf-bdca-4ec3-af5d-ea923d74f672.png"
+                  src="https://imagesave-splmdny.s3.ap-southeast-2.amazonaws.com/littlelemon-header2.webp"
                   alt="vegan burger"
                   className="object-cover object-center align-middle h-96"
                 />
                 <img
-                  src="https://media.discordapp.net/attachments/983087974336036907/1189726285971341342/chefs-cooking-kitchen-restaurant.jpg"
+                  src="https://imagesave-splmdny.s3.ap-southeast-2.amazonaws.com/littlelemon-header1.webp"
                   alt="reservation"
                   className="object-cover object-center align-middle h-96"
                 />
